@@ -1,0 +1,400 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Mulish', sans-serif;
+
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0;
+    overflow: hidden;
+}
+
+.container{
+    width: 22rem;
+    background: linear-gradient(rgba(127,127,127,0.14),rgba(218,68,127,0.36)); 
+    box-shadow: 0 0 3px rgba(0,0,0,0.2);
+    border-radius: 5px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.header-container{
+    margin: 25px 15px;
+
+    display: flex;
+    justify-content: space-between;
+}
+.fas{
+    color: #727372;
+    padding: 10px;
+}
+
+.img-container{
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+
+    overflow: hidden;
+}
+
+.stitchimg{
+    width: 200px;
+    border-radius: 10px;
+}
+
+.img-container h3{
+    color: #4d4d4d;
+    white-space: nowrap;
+    animation: mytextani 9s linear infinite forwards;
+}
+
+.play-container{
+    position: relative;
+}
+
+.playlist-container{
+    margin: 30px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.playlist-container .icons{
+    color: #fff;
+    font-weight: 300;
+}
+
+.playbar{
+    width: 300px;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 5px;
+
+    position: absolute;
+    top: 50px;
+    left: 1.3rem;
+}
+
+.fa-circle{
+    color: rgb(150, 150, 150);
+    font-size: 13px;
+
+    position: absolute;
+    top: 35px;
+    left: 50px;
+}  
+
+.playtime{
+    margin:0 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.playtime small{
+    color: #fff;
+    font-size: 12px;
+}
+
+.playbuttons{
+    margin: 25px 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.playbuttons .fas{
+    color: #fff;
+}
+
+.playbuttons .fas:hover{
+    background-color: #bfbfbf;
+    border-radius: 50%;
+}
+
+.playbuttons .fa-share{
+    z-index: 1;
+}
+
+.socialicon{
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    font-size: 1.5rem;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    border-radius: 50%;
+    opacity: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    bottom: 1.3rem;
+    left: 1.3rem;
+
+    transition: all 0.4s;
+}
+
+.shareicon-container.active .socialicon:nth-of-type(1){
+    color: royalblue;
+    bottom: 4.5rem;
+    left: 0.5rem;
+    opacity: 1;
+}
+
+.shareicon-container.active .socialicon:nth-of-type(2){
+    bottom: 3.3rem;
+    left: 3.5rem;
+    opacity: 1;
+}
+
+.shareicon-container.active .socialicon:nth-of-type(3){
+    color: rgb(57, 37, 182);
+    bottom: 0.2rem;
+    left: 4rem;
+    opacity: 1;
+}
+
+.floatbtn-container{
+    position: relative;
+}
+
+.floatbtn-container .floatbtn{ 
+    width: 45px;
+    height: 45px;
+    background-color: rgba(0,0,0,0.4);
+    border-radius: 50%;
+    border: 3px solid rgb(255, 254, 254);
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.4);
+    opacity: 0.89;
+    cursor: pointer;
+
+    position: absolute;
+    top: -350px;
+    right: -30px;
+
+    z-index: 1;
+
+    transition: all 0.6s;
+}
+
+.floatbtn:hover{
+    background-color: rgba(0,0,0,0.7);
+}
+
+.floatbtn-container .recenticon{
+    opacity: 0;
+
+    position: absolute;
+    top: -30rem;
+    right: 12px;
+
+    transition: all 0.5s;
+}
+
+.floatbtn-container.show .recenticon{
+    opacity: 1;
+}
+
+.floatbtn-container.show .floatbtn{
+    opacity: 0;
+
+    transition: all 0.6s;
+}
+
+.recent{
+    background-color: rgba(127,127,127,0.95);
+    border-radius: 8px;
+    margin-bottom: 5px;
+    padding: 8px 12px;
+    display: flex;
+}
+
+.recent p{
+    color: #fff;
+    margin: 5px;
+}
+
+.recent .fa-facebook-f{
+    width: 35px;
+    height: 35px;
+    background-color: #e8eded;
+    border-radius: 50%;
+    color: #1c4b9c;
+    font-size: 1.5rem;
+    margin:2px 15px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.recent .fa-twitter{
+    width: 35px;
+    height: 35px;
+    background-color: #e8eded;
+    border-radius: 50%;
+    color: #0f87b8;
+    font-size: 1.5rem;
+    margin:2px 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quickicon-container{
+    width: 200px;
+    background-color: rgba(127,127,127,0.95);
+    border-radius: 8px;
+    padding: 13px;
+}
+
+.floaticon-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: auto;
+}
+
+.icons-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0;
+}
+
+.icons-container span{
+    color: #fff;
+    font-size: 11px;
+}
+
+.floaticon{
+    width: 35px;
+    height: 35px;
+    color: #fff;
+    background-color: #989c9c;
+    text-align: center;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+.floaticon:hover{
+    background-color: #bfbfbf;
+}
+
+.formcontainer{
+    width: 22rem;
+    height: 100vh;
+    background-color: rgb(252, 249, 249);
+    padding: 20px;
+    margin: auto;
+    display: none;
+
+    z-index: 2;
+
+    position: absolute;
+    top: 0;
+
+    animation: myanileft 0.5s ease;
+}
+
+.formcontainer.show{
+    display: flex;
+}
+
+.formcontainer form{
+    margin-top: 100px;
+}
+
+h2{
+    text-align: center;
+    color: rgb(85, 84, 84);
+}
+
+.form-control{
+    width: 100%;
+    background-color: transparent;
+    border:1px solid rgb(223, 216, 216);
+    padding: 15px;
+    margin: 10px 0;
+}
+
+.btn{
+    width: 100%;
+    background-color: #0e87eb;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 900;
+    border: 0;
+    padding: 10px 0;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: #0363b1;
+}
+
+.form-control:focus,.btn:focus{
+    border: 1px solid #0e87eb;
+    outline: none;
+}
+
+.close{
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+}
+
+.close:hover{
+    border: 1px solid #0e87eb;
+    border-radius: 50%;
+}
+
+.fa-arrow-left{
+    color: rgb(88, 82, 82);
+}
+
+@keyframes mytextani{
+    0%{
+        transform: translateX(250px);
+    }
+    50%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-300px);
+    }
+}
+
+@keyframes myanileft{
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+
+}
